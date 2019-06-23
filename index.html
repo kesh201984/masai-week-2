@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<head>
+    <title>Typewriter</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<style>
+
+
+#DisplayOutput
+{
+    border: 5px solid black;
+    padding: 20px;
+    height:50px;
+    width:900px;
+    margin-left: 100px;
+    margin-top: 100px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#spacebar{
+    height: 60px;
+    width: 480px;
+    margin-top:20px;
+
+}
+
+#passwordkey{
+    height:60px;
+    border: 1px solid black;
+    margin-left: 500px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.typenumkey{  
+    border: 5px solid black;
+    padding-top: 10px;
+    float:left;
+    border-radius: 5px;
+    background: black;
+    height: 60px;
+    width: 60px;
+    line-height: 50px;
+    margin-top: 20px;
+    margin-left:15px;
+    position: relative;
+    box-sizing: border-box;
+
+
+}  
+
+.numchar{
+    color: white;
+    font-size: 25px;
+    font-family: sans-serif;
+    text-align: left;
+    padding-left: 3px;
+    margin-left: 30px;
+    margin-right: 10px;
+       
+}
+
+.alphabet{
+    color: white;
+    font-size:30px;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 2px;
+    margin-right: auto;
+    display: block;           
+}
+
+.row1_margin{
+    margin-left: 46px
+    }
+
+.row2_margin{
+    margin-left:100px;
+    
+ }
+
+.row3_margin{
+    margin-left:55px;
+ }
+
+.row4_margin{
+    margin-left:100px;
+ }
+ 
+.row5_margin{
+    margin-left:300px;
+ }
+
+ .row6_margin{
+    margin-left:300px;
+ }
+ 
+
+.space{
+    background: black;
+ }
+
+.passwd{
+    text-align: center;
+    font-family: sans-serif;
+    color: black;
+    
+}
+
+.passwdon{
+    text-align:center;
+    font-family: sans-serif;
+    color: lightgreen;
+}
+
+</style>
+
+<body>
+    <div id="DisplayOutput" aria-readonly="true"></div>
+
+        <button class="typenumkey numchar" onclick="display('1')" value="1">1<span class="char">!</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('2')" value="2">2<span class="char">@</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('3')" value="3">3<span class="char">#</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('4')" value="4">4<span class="char">$</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('5')" value="5">5<span class="char">%</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('6')" value="6">6<span class="char">^</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('7')" value="7">7<span class="char">&</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('8')" value="8">8<span class="char">*</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('9')" value="9">9<span class="char">(</span>
+        </button>
+
+        <button class="typenumkey numchar" onclick="display('0')" value="0">0<span class="char">)</span>
+        </button>
+        
+        <button id ="del_btn" class="typenumkey numchar" onclick="del()" value="del">DEL</button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('q')" value="q">Q
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('w')" value="w">W
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('e')" value="e">E
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('r')" value="r">R
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('t')" value="t">T
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('y')" value="y">Y
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('u')" value="u">U
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('i')" value="i">I
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('o')" value="o">O
+        </button>
+
+        <button class="typenumkey alphabet row1_margin" onclick="display('p')" value="p">P
+        </button>
+        
+        <button class="typenumkey alphabet row2_margin" onclick="display('a')" value="a">A
+        </button>
+
+        <button class="typenumkey alphabet row2_margin" onclick="display('s')" value="s">S
+        </button>
+
+        <button class="typenumkey alphabet row2_margin" onclick="display('d')" value="d">D
+        </button>
+
+        <button class="typenumkey alphabet row2_margin" onclick="display('f')" value="f">F
+        </button>
+
+        <button class="typenumkey alphabet row2_margin" onclick="display('g')" value="g">G
+        </button>
+
+        <button class="typenumkey alphabet row2_margin" onclick="display('h')" value="h">H
+        </button>
+
+        <button class="typenumkey alphabet row2_margin" onclick="display('j')" value="j">J
+        </button>
+
+        <button class="typenumkey alphabet row2_margin" onclick="display('k')" value="k">K
+        </button>
+
+        <button class="typenumkey alphabet row2_margin" onclick="display('l')" value="l">L
+        </button>
+
+        <button class="typenumkey alphabet row3_margin" onclick="display('z')" value="z">Z
+        </button>
+
+        <button class="typenumkey alphabet row3_margin" onclick="display('x')" value="x">X
+        </button>
+
+        <button class="typenumkey alphabet row3_margin" onclick="display('c')" value="x">C
+        </button>
+
+        <button class="typenumkey alphabet row3_margin" onclick="display('v')" value="c">V
+        </button>
+
+        <button class="typenumkey alphabet row3_margin" onclick="display('b')" value="b">B
+        </button>
+
+        <button class="typenumkey alphabet row3_margin" onclick="display('N')" value="n">N
+        </button>
+
+        <button class="typenumkey alphabet row3_margin" onclick="display('M')" value="m">M
+        </button>
+
+        <button class="typenumkey alphabet row3_margin" onclick="display('.com')" value="1">.com
+        </button>
+        
+        <button id="spacebar" class="space row4_margin" onclick="display(' ')" value=" ">
+        </button>
+
+        <button id="passwordkey" class=" passwd row_5 margin" on_click=passwrd() value="1">PASSWD
+        </button>
+
+        <button id="passwordkey" class="passwdon row_6 margin" on_click=passwordON() value="1">PASSWD
+        </button>        
+
+        <script>
+        // Delete
+
+        function del(){
+           var str=document.getElementById("DisplayOutput").innerHTML;
+           var nstr=str.substr(0,str.length-1);      //new altered string
+           document.getElementById("DisplayOutput")=nstr;
+        }
+         //Shows Output of Keys Pressed
+
+        function display(value){
+           document.getElementById("DisplayOutput").innerHTML+=value;
+        }
+        
+        </script>
+
+        
+
+        
+
+       
+
+
+        
+          
+</body>
+</html>
+</body>
